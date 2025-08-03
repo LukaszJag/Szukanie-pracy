@@ -1,0 +1,58 @@
+Java junior:
+	
+	1. TDD [Test Driven Development] - pisanie testu do nieistniejącego kodu 
+
+	2. TDD/BDD [Test Driven Development/Behavior-driven development] - [ENG] - Behavioral-Driven Development (BDD) is a testing approach derived from the Test-Driven Development (TDD) methodology
+
+	3. Narzędzia do zarządzania zmianami i kontrolowania wersji baz danych np.:
+	
+		-> Liquibase
+
+		-> Flyway
+
+
+	4. Znajomość narzędzi np. Postman, SoapUI do testowania
+
+		-> Automatyzacji testów (backend - Postman, frontend - Selenium),
+
+
+	5. Stack technologiczny: Java, Angular, PostgreSQL,
+
+
+	6. GraphQL
+
+	
+	7. Experience working with NoSQL and SQL databases
+
+
+	8. Git
+
+
+	9. JIRA -
+
+
+	10. Web scraping
+
+
+	11. Linux
+
+
+ 	12. Clean code
+
+
+ 	13. JDBC
+
+
+ 	14. REST
+
+
+ 	15. SOAP
+
+
+ 	16. JSON
+
+
+ 	17. PowerShell
+
+
+

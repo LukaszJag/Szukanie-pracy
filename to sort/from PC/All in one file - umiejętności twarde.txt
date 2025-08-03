@@ -1,0 +1,80 @@
+Java junior:
+	
+	1. TDD:
+
+	[Cytat - https://softnauts.com/pl/blog/tdd-co-to-jest-i-dlaczego-warto-go-uzywac]:
+
+		Development zakłada zupełną zmianę podejścia do testowania kodu. W największym skrócie technika ta polega na pisaniu testów do nieistniejącego kodu, oraz późniejszym dopisywaniu kodu w zgodności z testami i jego refaktoryzajcę.
+
+		Sposób działania TDD wywodzi się z założenia, że wcześniejsze wykrycie błędów pozwoli oszczędzić czas na ich usuwaniu. Model ten opiera się także na koncepcji, według której najpierw należy zbadać sposób działania kodu i jego możliwe scenariusze, a dopiero później – jeżeli okażą się one poprawne – wyprodukować na ich podstawie właściwy kod.
+
+	2. TDD/BDD [Test Driven Development/Behavior-driven development] - [ENG] - Behavioral-Driven Development (BDD) is a testing approach derived from the Test-Driven Development (TDD) methodology
+
+	3. Narzędzia do zarządzania zmianami i kontrolowania wersji baz danych np.:
+	
+		-> Liquibase
+
+		-> Flyway
+
+
+	4. Znajomość narzędzi np. Postman, SoapUI do testowania
+
+		-> Automatyzacji testów (backend - Postman, frontend - Selenium),
+
+
+	5. Stack technologiczny: Java, Angular, PostgreSQL,
+
+
+	6. GraphQL
+
+	
+	7. Experience working with NoSQL and SQL databases
+
+
+	8. Git
+
+
+	9. JIRA:
+
+		Turotial:
+
+			[YouTube] - Jira Training | Jira Tutorial for Beginners | Jira Course | Intellipaat
+			[link] - https://www.youtube.com/watch?v=uM_m6EzMg3k
+
+			-> Jira is a project management tool andan issue tracker developed by Atlassian
+			-> Jira is an all-in-one solution for multiple software and team related use cases
+
+			-> Jira feature:
+				--> Creating Backlogs
+				--> Creating Sprints
+				--> Creating Tasks
+				--> Updating status on the board
+				--> Managing releases
+				--> Code integration
+				--> Managing workflows
+
+
+
+
+	10. Web scraping
+
+
+	11. Linux
+
+
+ 	12. Clean code
+
+
+ 	13. JDBC
+
+
+ 	14. REST
+
+
+ 	15. SOAP
+
+
+ 	16. JSON
+
+
+ 	17. PowerShell
