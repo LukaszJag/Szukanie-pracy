@@ -1,0 +1,7 @@
+PC hardware
+
+- configure PC unit
+- knowledge about PC components: names, rules , how to replace, basic diagnostics
+- peripherals throubleshooting: printers, monitors, keyboards, mouses
+
+

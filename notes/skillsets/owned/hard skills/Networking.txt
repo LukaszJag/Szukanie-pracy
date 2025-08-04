@@ -1,0 +1,7 @@
+Networking
+
+- configure switches
+- configure PoE devices
+- manage cablings
+
+
