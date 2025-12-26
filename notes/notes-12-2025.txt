@@ -1,0 +1,33 @@
+Praca w zawodzie - ???:
+
+A - ile jest ofert
+B - jakie są wymagania
+C - stawki wynagrodzeń
+D
+
+Hardware - naprawa, serwis, doradztwo:
+	serwis komputerowy
+	serwis/sklep komórkowy
+
+	Sklepy z sprzętem:
+		komputeronik
+		media markt
+		media ekspert
+		rtv euro agd
+		neonet
+
+
+Hardware / software - naprawa, serwis:
+	Second Line (L2) Support
+
+
+First Line (L1) Support
+
+
+Programowanie
+	manualny tester oprogramowania 
+
+	automatyczny tester oprogramowania 
+
+	backend java developer
+
