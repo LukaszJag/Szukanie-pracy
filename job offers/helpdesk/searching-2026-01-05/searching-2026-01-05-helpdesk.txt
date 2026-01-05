@@ -1,0 +1,33 @@
+Three main websites:
+
+    https://it.pracuj.pl/:
+        https://it.pracuj.pl/praca/helpdesk;kw/wroclaw;wp?rd=30
+            15 results
+
+                https://www.pracuj.pl/praca/application-support-analyst-wroclaw-legnicka-48f,oferta,1004548445?s=fd75c519&searchId=MTc2NzYzNDA4MjEzNC4wOTU1 - RTA
+                https://www.pracuj.pl/praca/helpdesk-analyst-wroclaw,oferta,1004534382?s=fd75c519&searchId=MTc2NzYzNDA4MjEzNC4wOTU1 - RTA
+                https://www.pracuj.pl/praca/junior-cloud-support-analyst-wroclaw-legnicka-48f,oferta,1004548446?s=fd75c519&searchId=MTc2NzYzNDA4MjEzNC4wOTU1 - RTA
+
+
+
+    https://justjoin.it/job-offers/wroclaw:
+        https://justjoin.it/job-offers/wroclaw/support
+            131 results - mixed with IT support
+                32 results after filter - junior - https://justjoin.it/job-offers/wroclaw/support?experience-level=junior&orderBy=DESC&sortBy=published
+                    https://justjoin.it/job-offer/nasdaq-technical-support-analyst-wroclaw-support - RTA
+                    https://justjoin.it/job-offer/acturis-poland-sp-z-o-o--application-support-analyst-wroclaw-support - chyba to samo ogłoszenie jest na pracuj.pl
+                    https://justjoin.it/job-offer/godel-technologies-europe-it-support-associate-wroclaw-support - RTA
+
+
+
+    https://www.linkedin.com/feed/
+        https://www.linkedin.com/jobs/search/?currentJobId=4327993516&geoId=105001681&keywords=helpdesk&origin=JOBS_HOME_LOCATION_HISTORY
+            18 results
+
+
+RTA- ready to apply
+
+
+
+
+
