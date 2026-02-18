@@ -1,0 +1,51 @@
+my-informations-to-CV:
+
+1 - General:
+
+    name: Łukasz
+    surname: Jagnow
+    phone: +48 507 707 650
+    city: Wrocław, Poland
+
+
+
+2- Education:
+
+    UWr(maybe but without date)
+    WSB(no date)
+
+3 - Certs:
+
+    java: from bootcamp
+
+4 - Skills
+
+
+
+
+5 - Hobbies
+
+Choose some from this:
+    -> Science fiction 
+    -> Strategy Games
+    -> Powerlifting
+    -> MMA 
+    -> Swimming 
+    -> Motosport
+    -> Music
+    -> Drone
+    -> GameDev
+    -> Cars
+
+6 - About me
+
+    Version 1:
+
+        I'm student of last year. I write my diploma and I
+        don't have lessons at University.
+        I like work in team and alone I very flexible in this
+        area. Furthermore, I can work with client both in
+        English or Polish.
+        My hobbies are sport, reading, and computers
+        games especially strategy games.
+

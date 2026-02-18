@@ -1,3 +1,16 @@
+
+
+
+6. REST Web Services - dowiedzieć się co to jest
+
+22. Dodać - książki/kursy/projekty praktyczne do tematów(zarówno jako materiały, git-repo foldery, lininijki do wypełniania w statytykach):
+-> CompTIA Linux+ - Linux-> co wymagane w pracy
+-> CompTIA Network+ - Network-> co wymagane w pracy
+-> CompTIA Cloud+ - Cloud-> co wymagane w pracy
+-> HTML/CSS
+
+Z ofert pracy:
+
 Agenda
 -> nie mam 
 L> chce się nauczyć
