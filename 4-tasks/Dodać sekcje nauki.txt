@@ -1,3 +1,8 @@
-Dodać sekcje nauki
+Dodać sekcje nauki - co wymagane w pracy:
 
-SQL, bazy danych - z naciskiem czego oczekują w pracy
+    -> SQL, bazy danych
+    -> CompTIA Linux+ - Linux
+    -> CompTIA Network+ - Network
+    -> CompTIA Cloud+ - Cloud
+    -> HTML/CSS
+
