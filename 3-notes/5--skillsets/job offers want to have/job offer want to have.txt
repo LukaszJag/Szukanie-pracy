@@ -1,8 +1,4 @@
 
-
-
-6. REST Web Services - dowiedzieć się co to jest
-
 22. Dodać - książki/kursy/projekty praktyczne do tematów(zarówno jako materiały, git-repo foldery, lininijki do wypełniania w statytykach):
 -> CompTIA Linux+ - Linux-> co wymagane w pracy
 -> CompTIA Network+ - Network-> co wymagane w pracy
@@ -23,22 +19,22 @@ L> chce się nauczyć
 
 Helpdesk:
 
-  Junior IT Support Specialist:
-  https://www.linkedin.com/jobs/view/4371429811:
+    Junior IT Support Specialist:
+    https://www.linkedin.com/jobs/view/4371429811:
 
 
     Nasze oczekiwania: 
 
-      ->  Bardzo dobra znajomość Windows 10/11 (konfiguracja, diagnostyka, sieć) 
-      ->  Umiejętność diagnozowania i naprawy usterek laptopów, stacji roboczych, monitorów, telefonów służbowych, drukarek i peryferiów. 
-      -!> Znajomość pakietu MS Office 365 (Outlook, Teams, Excel, Word) oraz przeglądarek internetowych. 
-      ->  Zrozumienie protokołu TCP/IP, konfiguracja IP, VPN, Wi-Fi. 
-      ->  Podstawowa wiedza z zakresu Active Directory (tworzenie kont, resetowanie haseł) oraz narzędzi typu SCCM/Intune do instalacji oprogramowania. 
-      +>  Umiejętność i chęć nauki nowych technologii i narzędzi 
-      +>  Język angielski na poziomie min. B2 (w międzynarodowych korporacjach to standard). 
-      +>  Komunikatywność i nastawienie na pomoc (umiejętność tłumaczenia problemów technicznych nietechnicznym użytkownikom) 
-      +>  Zdolność do szybkiego diagnozowania problemów 
-      +>  Umiejętność zarządzania priorytetami 
+        ->  Bardzo dobra znajomość Windows 10/11 (konfiguracja, diagnostyka, sieć) 
+        ->  Umiejętność diagnozowania i naprawy usterek laptopów, stacji roboczych, monitorów, telefonów służbowych, drukarek i peryferiów. 
+        -!> Znajomość pakietu MS Office 365 (Outlook, Teams, Excel, Word) oraz przeglądarek internetowych. 
+        ->  Zrozumienie protokołu TCP/IP, konfiguracja IP, VPN, Wi-Fi. 
+        ->  Podstawowa wiedza z zakresu Active Directory (tworzenie kont, resetowanie haseł) oraz narzędzi typu SCCM/Intune do instalacji oprogramowania. 
+        +>  Umiejętność i chęć nauki nowych technologii i narzędzi 
+        +>  Język angielski na poziomie min. B2 (w międzynarodowych korporacjach to standard). 
+        +>  Komunikatywność i nastawienie na pomoc (umiejętność tłumaczenia problemów technicznych nietechnicznym użytkownikom) 
+        +>  Zdolność do szybkiego diagnozowania problemów 
+        +>  Umiejętność zarządzania priorytetami 
 
 
 
