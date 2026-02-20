@@ -18,24 +18,38 @@ my-informations-to-CV:
 
 4 - Skills
 
-MySQL 
-Networking
+    Software:
+
+        MySQL
+
+    Hardware:
+
+    Softskill:
+        Troubleshooting
 
 
-Windows PowerShell
-Troubleshooting 
 
 
-PC Hardware 
-Mobie Hardware 
 
 
-Java 
-Cloud 
+ 
+    Networking
 
 
-Git 
-MS Office
+    Windows PowerShell
+     
+
+
+    PC Hardware 
+    Mobie Hardware 
+
+
+    Java 
+    Cloud 
+
+
+    Git 
+    MS Office
 
 
 5 - Hobbies
