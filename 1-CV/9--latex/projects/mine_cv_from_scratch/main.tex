@@ -1,0 +1,204 @@
+% -------------------------------------------------
+%  Jack Sparrow – One‑page Pirate CV (no gap)
+%  Compile with: pdflatex jack_sparrow_cv.tex
+% -------------------------------------------------
+\documentclass[11pt,a4paper]{article}
+
+% -------------------------------------------------
+% Packages
+% -------------------------------------------------
+\usepackage[a4paper,margin=0cm]{geometry}   % we draw our own margins
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usepackage{xcolor}
+\usepackage{paracol}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fontawesome5}
+\usepackage{titlesec}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{setspace}
+
+% -------------------------------------------------
+% Page style
+% -------------------------------------------------
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlist[itemize]{leftmargin=*,noitemsep,topsep=0pt}
+\setstretch{0.96}           % slightly tighter lines
+
+% -------------------------------------------------
+% Colours
+% -------------------------------------------------
+\definecolor{topbar}{HTML}{88C0D0}   % light blue
+\definecolor{sidebar}{HTML}{2E3440}  % dark grey
+\definecolor{textcol}{HTML}{2E3440} % same as sidebar for body text
+\definecolor{white}{HTML}{FFFFFF}
+
+% -------------------------------------------------
+% Section titles
+% -------------------------------------------------
+\titleformat{\section}
+  {\large\bfseries\color{topbar}}
+  {}
+  {0em}
+  {}
+
+% -------------------------------------------------
+% Remove the default space between the two columns
+% -------------------------------------------------
+\setlength{\columnsep}{0pt}
+
+% -------------------------------------------------
+\begin{document}
+
+% -------------------------------------------------
+% Background (top bar + sidebar)
+% -------------------------------------------------
+\begin{tikzpicture}[remember picture,overlay]
+  % top bar – 3 cm high
+  \fill[topbar]
+    (current page.north west) rectangle
+    ([yshift=-3cm]current page.north east);
+  % sidebar – 6 cm wide, starts under the top bar
+  \fill[sidebar]
+    ([yshift=-3cm]current page.north west) rectangle
+    ([xshift=6cm]current page.south west);
+\end{tikzpicture}
+
+% -------------------------------------------------
+% Name & profession (inside top bar)
+% -------------------------------------------------
+\vspace*{0.6cm}               % distance from the very top of the bar
+\hspace*{1cm}
+{\Huge\bfseries\color{white} Lukasz Sparrow}
+
+\vspace{0.3cm}
+\hspace*{1cm}
+{\large\color{white} Captain – Pirate}
+
+\vspace{0.2cm}                % tiny breathing room before columns start
+
+% -------------------------------------------------
+% Two‑column layout (sidebar / main area)
+% -------------------------------------------------
+\begin{paracol}{2}
+\columnratio{0.35,0.65}       % left column (sidebar) ≈ 35 % of the page width
+
+% =================================================
+% LEFT COLUMN – SIDEBAR (unchanged)
+% =================================================
+\begin{leftcolumn}
+\color{white}
+\hspace*{0.5cm}               % small internal padding inside the dark bar
+% ---- Contact ------------------------------------------------
+\section*{\color{white}Contact}
+\faEnvelope\ \ \href{mailto:jack@sparrow.com}{jack@sparrow.com}\\
+\faPhone\ \ +99 333 564 7380\\
+\faMapMarker*\ \ Tortuga, Caribbean\\
+\faTwitter\ \ @JackPirate\\[0.4em]
+
+% ---- Skills -------------------------------------------------
+\section*{\color{white}Skills}
+\begin{itemize}
+  \item HTML / CSS
+  \item \LaTeX
+  \item XSLT
+  \item Python
+  \item R
+  \item JavaScript
+\end{itemize}
+
+% ---- Languages ----------------------------------------------
+\section*{\color{white}Languages}
+English – C2 (mother tongue)\\
+French  – C2\\[0.4em]
+
+% ---- Interests -----------------------------------------------
+\section*{\color{white}Interests}
+Pirate’s life, sea‑pilaging, plundering, ship‑stealing, hijacking\\[0.4em]
+
+% ---- Hobbies -------------------------------------------------
+\section*{\color{white}Hobbies}
+Rhum, Beer, The Code\\[0.4em]
+
+% ---- Strengths -----------------------------------------------
+\section*{\color{white}Strengths}
+honest, thieving, handsome\\[0.4em]
+
+% ---- References ----------------------------------------------
+\section*{\color{white}References}
+Will Turner\\
+Barbossa (possibly Mr. Swan)\\
+\end{leftcolumn}
+
+% =================================================
+% RIGHT COLUMN – MAIN CONTENT (no extra gap)
+% =================================================
+\switchcolumn
+\color{textcol}
+% *** No manual \hspace* here – the column starts flush with the sidebar ***
+
+% ---- Profile -------------------------------------------------
+\section*{Profile}
+Captain Jack Sparrow, seasoned privateer and buccaneer with more than a century of experience navigating the high seas, leading crews, and recovering lost vessels. Comfortable with a broad set of IT tools (HTML, CSS, \LaTeX, XSLT, Python, R, JavaScript).
+
+\vspace{0.4cm}
+% ---- Experience ---------------------------------------------
+\section*{Experience}
+\textbf{Captain of the Black Pearl} \hfill 2018–2021\\
+East Indies – Lead\\
+\begin{itemize}
+  \item Re‑acquired the Black Pearl after a prolonged mutiny.
+  \item Coordinated a crew of 50+ pirates across multiple islands.
+\end{itemize}
+
+\textbf{Freelance Pirate} \hfill 2019\\
+Tortuga – Bucaneering\\
+\begin{itemize}
+  \item Performed assorted buccaneering missions; “the usual, aye?”.
+\end{itemize}
+
+\textbf{Captain of the Black Pearl} \hfill 2016–2017\\
+Tortuga – Lead\\
+\begin{itemize}
+  \item Discovered a secret treasure; subsequently lost the ship.
+\end{itemize}
+
+\vspace{0.3cm}
+% ---- Education -----------------------------------------------
+\section*{Education}
+\textbf{Captain (Certified)} \hfill 1710\\
+Tortuga University\\[0.2em]
+
+\textbf{M.A. Bucaneering} \hfill 1715\\
+London\\[0.2em]
+
+\textbf{B.A. Bucaneering} \hfill 1720\\
+London\\[0.2em]
+
+\vspace{0.3cm}
+% ---- Certificates \& Grants ---------------------------------
+\section*{Certificates \& Grants}
+\begin{itemize}
+  \item 1708 – Captain’s Certificates
+  \item 1710 – Travel grant
+  \item 1715–1716 – Grant from the Pirate’s Company
+\end{itemize}
+
+\vspace{0.3cm}
+% ---- Publications --------------------------------------------
+\section*{Publications}
+\begin{itemize}
+  \item 1729 – “How I almost got killed by Lady Swan”, Tortuga Printing Press.
+  \item 1720 – “Privateering for Beginners”, in \emph{The Pragmatic Pirate} (1/1720).
+\end{itemize}
+
+\vspace{0.3cm}
+% ---- Talks --------------------------------------------------
+\section*{Talks}
+Nov 1726 – “How I lost my ship (and how to get it back)”, Annual Pirate’s Conference, Tortuga.
+
+\end{paracol}
+\end{document}

@@ -1,0 +1,176 @@
+\documentclass[11pt,a4paper]{article}
+
+% ------------------------------------------------
+% Packages
+% ------------------------------------------------
+\usepackage[a4paper,margin=0cm]{geometry}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usepackage{xcolor}
+\usepackage{paracol}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fontawesome5}
+\usepackage{titlesec}
+\usepackage{lmodern}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+
+% ------------------------------------------------
+% Colors
+% ------------------------------------------------
+\definecolor{topbar}{HTML}{88C0D0}
+\definecolor{sidebar}{HTML}{2E3440}
+\definecolor{textcol}{HTML}{2E3440}
+
+% ------------------------------------------------
+% Section style
+% ------------------------------------------------
+\titleformat{\section}
+  {\large\bfseries\color{topbar}}
+  {}
+  {0em}
+  {}
+
+% ------------------------------------------------
+\begin{document}
+
+% ------------------------------------------------
+% Background Layout (Top bar + Sidebar)
+% ------------------------------------------------
+\begin{tikzpicture}[remember picture,overlay]
+
+% Top bar
+\fill[topbar]
+  (current page.north west)
+  rectangle
+  ([yshift=-3cm]current page.north east);
+
+% Sidebar
+\fill[sidebar]
+  ([yshift=-3cm]current page.north west)
+  rectangle
+  ([xshift=6cm]current page.south west);
+
+\end{tikzpicture}
+
+% ------------------------------------------------
+% Name inside top bar
+% ------------------------------------------------
+\vspace*{1.2cm}
+\hspace*{1cm}
+{\Huge\bfseries\color{white} Your Name}
+
+\vspace{0.3cm}
+\hspace*{1cm}
+{\large\color{white} Your Profession}
+
+\vspace{1.5cm}
+
+% ------------------------------------------------
+\begin{paracol}{2}
+\columnratio{0.35,0.65}
+
+% ==================================================
+% LEFT COLUMN (SIDEBAR)
+% ==================================================
+\begin{leftcolumn}
+\vspace*{0.5cm}
+\color{white}
+\hspace*{0.5cm}
+
+\section*{\color{white}Contact}
+\faEnvelope \quad your@email.com \\
+\faPhone \quad +00 000 000 000 \\
+\faMapMarker* \quad City, Country \\
+\faLinkedin \quad linkedin.com/in/yourname
+
+\vspace{0.8cm}
+
+\section*{\color{white}Skills}
+\begin{itemize}[leftmargin=*]
+\item Python
+\item C++
+\item LaTeX
+\item Git
+\item Linux
+\end{itemize}
+
+\vspace{0.8cm}
+
+\section*{\color{white}Languages}
+English (C2) \\
+German (B2)
+
+\vspace{0.8cm}
+
+\section*{\color{white}Interests}
+Photography \\
+Travel \\
+Technology
+
+\end{leftcolumn}
+
+% ==================================================
+% RIGHT COLUMN
+% ==================================================
+\switchcolumn
+\color{textcol}
+\vspace*{0.5cm}
+\hspace*{0.8cm}
+
+\section*{Profile}
+Motivated professional with strong background in software
+development and system design. Passionate about clean
+architecture and efficient solutions.
+
+\vspace{0.6cm}
+
+\section*{Experience}
+
+\textbf{Senior Developer} \hfill 2022 -- Present \\
+Company Name, City
+\begin{itemize}
+\item Developed scalable backend systems
+\item Led engineering team
+\item Improved performance by 30\%
+\end{itemize}
+
+\vspace{0.5cm}
+
+\textbf{Junior Developer} \hfill 2020 -- 2022 \\
+Company Name, City
+\begin{itemize}
+\item Built automation tools
+\item Maintained CI/CD pipelines
+\end{itemize}
+
+\vspace{0.6cm}
+
+\section*{Education}
+
+\textbf{M.Sc. in Computer Science} \hfill 2018 -- 2020 \\
+University Name
+
+\vspace{0.4cm}
+
+\textbf{B.Sc. in Computer Science} \hfill 2015 -- 2018 \\
+University Name
+
+\vspace{0.6cm}
+
+\section*{Projects}
+
+\textbf{Project Name} \\
+Short description of project and technologies used.
+
+\vspace{0.6cm}
+
+\section*{Certificates}
+Certification Name (2023) \\
+Another Certification (2022)
+
+\end{paracol}
+
+\end{document}

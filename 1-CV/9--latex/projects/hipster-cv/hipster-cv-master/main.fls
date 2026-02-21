@@ -1,8 +1,8 @@
-PWD f:/Linux-Windows-Files/0-Job/GitHub-repo/1-CV/latex/hipster-cv/hipster-cv-master
+PWD f:/Linux-Windows-Files/0-Job/GitHub-repo/1-CV/9--latex/projects/hipster-cv/hipster-cv-master
 INPUT c:/texlive/2025/texmf.cnf
 INPUT c:/texlive/2025/texmf-dist/web2c/texmf.cnf
 INPUT c:/Users/lukas/.texlive2025/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT f:/Linux-Windows-Files/0-Job/GitHub-repo/1-CV/latex/hipster-cv/hipster-cv-master/main.tex
+INPUT f:/Linux-Windows-Files/0-Job/GitHub-repo/1-CV/9--latex/projects/hipster-cv/hipster-cv-master/main.tex
 OUTPUT main.log
 INPUT ./hipstercv.cls
 INPUT hipstercv.cls
