@@ -1,204 +1,238 @@
-% -------------------------------------------------
-%  Jack Sparrow – One‑page Pirate CV (no gap)
-%  Compile with: pdflatex jack_sparrow_cv.tex
-% -------------------------------------------------
+% !TeX program = lualatex
+% One-page CV inspired by the provided PDF layout (left column + center/right).
+% Compile with: lualatex cv.tex
+
 \documentclass[11pt,a4paper]{article}
 
-% -------------------------------------------------
-% Packages
-% -------------------------------------------------
-\usepackage[a4paper,margin=0cm]{geometry}   % we draw our own margins
-\usepackage{tikz}
-\usetikzlibrary{calc}
-\usepackage{xcolor}
-\usepackage{paracol}
-\usepackage{enumitem}
-\usepackage[hidelinks]{hyperref}
-\usepackage{fontawesome5}
-\usepackage{titlesec}
-\usepackage{lmodern}
+\usepackage[a4paper,margin=14mm]{geometry}
+\usepackage{fontspec}
 \usepackage{microtype}
-\usepackage{setspace}
+\usepackage{paracol}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{fontawesome5}
+\usepackage{hyperref}
 
-% -------------------------------------------------
-% Page style
-% -------------------------------------------------
+\hypersetup{
+  colorlinks=true,
+  urlcolor=black,
+  linkcolor=black
+}
+
+% -------------------- Fonts --------------------
+\setmainfont{TeX Gyre Heros} % clean Helvetica-like font (ships with TeX)
+
+% -------------------- Colors --------------------
+\definecolor{HeaderBlue}{HTML}{33B5D6}
+\definecolor{AccentGreen}{HTML}{6CC24A}
+\definecolor{LeftPanel}{HTML}{F2F4F7}
+\definecolor{TextDark}{HTML}{1F2937}
+\definecolor{Muted}{HTML}{6B7280}
+\definecolor{BarBG}{HTML}{D7DEE8}
+\definecolor{BarFG}{HTML}{7C3AED}
+
 \pagestyle{empty}
 \setlength{\parindent}{0pt}
-\setlist[itemize]{leftmargin=*,noitemsep,topsep=0pt}
-\setstretch{0.96}           % slightly tighter lines
+\setlength{\parskip}{5pt}
 
-% -------------------------------------------------
-% Colours
-% -------------------------------------------------
-\definecolor{topbar}{HTML}{88C0D0}   % light blue
-\definecolor{sidebar}{HTML}{2E3440}  % dark grey
-\definecolor{textcol}{HTML}{2E3440} % same as sidebar for body text
-\definecolor{white}{HTML}{FFFFFF}
+% -------------------- Layout lengths --------------------
+\newlength{\HeaderH}
+\setlength{\HeaderH}{40mm}
 
-% -------------------------------------------------
-% Section titles
-% -------------------------------------------------
-\titleformat{\section}
-  {\large\bfseries\color{topbar}}
-  {}
-  {0em}
-  {}
+\newlength{\LeftW}
+\setlength{\LeftW}{0.34\paperwidth}
 
-% -------------------------------------------------
-% Remove the default space between the two columns
-% -------------------------------------------------
-\setlength{\columnsep}{0pt}
+% -------------------- Helpers --------------------
+\newcommand{\SectionL}[1]{%
+  \vspace{6pt}%
+  {\colorbox{AccentGreen}{\strut\hspace{6pt}\textcolor{white}{\bfseries
+  \footnotesize #1}\hspace{6pt}}}\par\vspace{4pt}%
+}
 
-% -------------------------------------------------
+\newcommand{\SectionR}[1]{%
+  \vspace{4pt}%
+  {\bfseries\large\color{TextDark}#1}\par
+  {\color{Muted}\rule{\linewidth}{0.4pt}}\vspace{4pt}%
+}
+
+\newcommand{\Tag}[1]{%
+  \tikz[baseline]{\node[fill=black!8,rounded corners=2pt,
+  inner xsep=5pt,inner ysep=2.5pt]{\footnotesize #1};}%
+}
+
+\newcommand{\SkillBar}[3]{%
+  % #1 label, #2 value (0..1), #3 optional note (e.g., "Python")
+  {\footnotesize\color{TextDark}\textbf{#1}}
+  \ifx\relax#3\relax\else {\footnotesize\color{Muted}~#3}\fi\par
+  \begin{tikzpicture}
+    \fill[BarBG,rounded corners=2pt] (0,0) rectangle (\linewidth,0.18);
+    \fill[BarFG,rounded corners=2pt] (0,0) rectangle
+      ({#2*\linewidth},0.18);
+  \end{tikzpicture}\vspace{2pt}%
+}
+
+\newcommand{\Entry}[4]{%
+  % #1 date, #2 role, #3 org/location, #4 description
+  \textbf{\color{TextDark}#1}\hfill
+  {\color{TextDark}\textbf{#2}}\par
+  {\color{Muted}\footnotesize #3}\par
+  {\color{TextDark}#4}\par\vspace{5pt}%
+}
+
+% -------------------- Background (header + left panel) --------------------
+\usepackage{eso-pic}
+\AddToShipoutPictureBG*{%
+  \begin{tikzpicture}[remember picture,overlay]
+    % Header full width
+    \fill[HeaderBlue] (current page.north west)
+      rectangle ([yshift=-\HeaderH]current page.north east);
+
+    % Left panel below header
+    \fill[LeftPanel]
+      (current page.north west)
+      ++(0,-\HeaderH) rectangle (current page.south west
+      ++(\LeftW,0));
+  \end{tikzpicture}%
+}
+
+% -------------------- Document --------------------
 \begin{document}
 
-% -------------------------------------------------
-% Background (top bar + sidebar)
-% -------------------------------------------------
-\begin{tikzpicture}[remember picture,overlay]
-  % top bar – 3 cm high
-  \fill[topbar]
-    (current page.north west) rectangle
-    ([yshift=-3cm]current page.north east);
-  % sidebar – 6 cm wide, starts under the top bar
-  \fill[sidebar]
-    ([yshift=-3cm]current page.north west) rectangle
-    ([xshift=6cm]current page.south west);
-\end{tikzpicture}
+% ---------- Header content (full width) ----------
+\vspace*{-7mm}
+\begin{minipage}[t]{0.25\linewidth}
+  % Replace "photo.jpg" with your image file.
+  % If you do not want a photo, delete this minipage.
+  \vspace{3mm}
+  \begin{tikzpicture}
+    \clip (0,0) circle (1.75cm);
+    \node at (0,0) {\includegraphics[width=3.5cm]{photo.jpg}};
+  \end{tikzpicture}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.72\linewidth}
+  \vspace{5mm}
+  {\color{white}\bfseries\fontsize{26}{28}\selectfont
+  JORDAN KIM}\par
+  \vspace{2mm}
+  \Tag{Entry-Level IT Support} \hspace{6pt} \Tag{Junior Sysadmin}\par
+  \vspace{5mm}
+  {\color{white}\footnotesize
+  \faMapMarker*~Berlin, DE \hspace{10pt}
+  \faPhone*~+49 000 000000 \hspace{10pt}
+  \faEnvelope~\href{mailto:jordan.kim@email.com}{jordan.kim@email.com}
+  \hspace{10pt}
+  \faGithub~\href{https://github.com/jordankim}{github.com/jordankim}}
+\end{minipage}
 
-% -------------------------------------------------
-% Name & profession (inside top bar)
-% -------------------------------------------------
-\vspace*{0.6cm}               % distance from the very top of the bar
-\hspace*{1cm}
-{\Huge\bfseries\color{white} Lukasz Sparrow}
+\vspace{6mm}
 
-\vspace{0.3cm}
-\hspace*{1cm}
-{\large\color{white} Captain – Pirate}
-
-\vspace{0.2cm}                % tiny breathing room before columns start
-
-% -------------------------------------------------
-% Two‑column layout (sidebar / main area)
-% -------------------------------------------------
+% ---------- Two-column body (left panel + center/right) ----------
+\columnratio{0.34,0.66}
 \begin{paracol}{2}
-\columnratio{0.35,0.65}       % left column (sidebar) ≈ 35 % of the page width
 
-% =================================================
-% LEFT COLUMN – SIDEBAR (unchanged)
-% =================================================
-\begin{leftcolumn}
-\color{white}
-\hspace*{0.5cm}               % small internal padding inside the dark bar
-% ---- Contact ------------------------------------------------
-\section*{\color{white}Contact}
-\faEnvelope\ \ \href{mailto:jack@sparrow.com}{jack@sparrow.com}\\
-\faPhone\ \ +99 333 564 7380\\
-\faMapMarker*\ \ Tortuga, Caribbean\\
-\faTwitter\ \ @JackPirate\\[0.4em]
+% ===== Left column =====
+\switchcolumn[0]
 
-% ---- Skills -------------------------------------------------
-\section*{\color{white}Skills}
-\begin{itemize}
-  \item HTML / CSS
-  \item \LaTeX
-  \item XSLT
-  \item Python
-  \item R
-  \item JavaScript
-\end{itemize}
+\SectionL{FACTS}
+{\footnotesize
+\textbf{Jordan Kim}\par
+\color{Muted}Nationality:\color{TextDark} German\par
+\color{Muted}Born:\color{TextDark} 2002\par
+\color{Muted}Based in:\color{TextDark} Berlin\par
+\color{Muted}Looking for:\color{TextDark} IT Support / Junior IT Admin\par
+}
 
-% ---- Languages ----------------------------------------------
-\section*{\color{white}Languages}
-English – C2 (mother tongue)\\
-French  – C2\\[0.4em]
+\SectionL{AREAS OF SPECIALIZATION}
+{\footnotesize
+\textbullet~Helpdesk \& ticketing\par
+\textbullet~Windows \& Microsoft 365 administration\par
+\textbullet~Basic networking (TCP/IP, DNS, DHCP, VLAN concepts)\par
+\textbullet~Scripting \& automation (PowerShell / Python)\par
+\textbullet~Documentation \& user onboarding\par
+}
 
-% ---- Interests -----------------------------------------------
-\section*{\color{white}Interests}
-Pirate’s life, sea‑pilaging, plundering, ship‑stealing, hijacking\\[0.4em]
+\SectionL{SKILLS}
+{\footnotesize\textbf{Languages}}\par
+{\footnotesize
+English \hfill C2\par
+German \hfill C2\par
+French \hfill B1\par
+}
 
-% ---- Hobbies -------------------------------------------------
-\section*{\color{white}Hobbies}
-Rhum, Beer, The Code\\[0.4em]
+\vspace{4pt}
+{\footnotesize\textbf{IT \& tools}}\par
+\SkillBar{Windows / M365}{0.85}{(Entra basics, Exchange, Teams)}
+\SkillBar{Linux}{0.55}{(CLI, permissions, services)}
+\SkillBar{Networking}{0.60}{(troubleshooting, Wireshark basics)}
+\SkillBar{PowerShell}{0.65}{(automation, reporting)}
+\SkillBar{Python}{0.55}{(small tools, APIs)}
+\SkillBar{HTML/CSS}{0.45}{(basic)}
+\SkillBar{Git}{0.50}{(branches, PRs)}
 
-% ---- Strengths -----------------------------------------------
-\section*{\color{white}Strengths}
-honest, thieving, handsome\\[0.4em]
+\SectionL{INTERESTS}
+{\footnotesize
+\textbullet~Homelab \& self-hosting\par
+\textbullet~Cybersecurity fundamentals\par
+\textbullet~Automation and tooling\par
+\textbullet~Cloud basics (Azure/AWS concepts)\par
+}
 
-% ---- References ----------------------------------------------
-\section*{\color{white}References}
-Will Turner\\
-Barbossa (possibly Mr. Swan)\\
-\end{leftcolumn}
+\SectionL{STRENGTHS}
+{\footnotesize
+\Tag{customer-first}~\Tag{structured troubleshooting}~\Tag{documentation}\par
+\Tag{calm under pressure}~\Tag{team player}\par
+}
 
-% =================================================
-% RIGHT COLUMN – MAIN CONTENT (no extra gap)
-% =================================================
+\SectionL{REFERENCES}
+{\footnotesize Available on request.}
+
+% ===== Right column =====
 \switchcolumn
-\color{textcol}
-% *** No manual \hspace* here – the column starts flush with the sidebar ***
 
-% ---- Profile -------------------------------------------------
-\section*{Profile}
-Captain Jack Sparrow, seasoned privateer and buccaneer with more than a century of experience navigating the high seas, leading crews, and recovering lost vessels. Comfortable with a broad set of IT tools (HTML, CSS, \LaTeX, XSLT, Python, R, JavaScript).
+\SectionR{PROFILE}
+Entry-level IT professional focused on reliable user support, clear
+documentation, and practical automation. Comfortable troubleshooting
+Windows/M365 issues, onboarding users, and escalating with strong notes.
 
-\vspace{0.4cm}
-% ---- Experience ---------------------------------------------
-\section*{Experience}
-\textbf{Captain of the Black Pearl} \hfill 2018–2021\\
-East Indies – Lead\\
-\begin{itemize}
-  \item Re‑acquired the Black Pearl after a prolonged mutiny.
-  \item Coordinated a crew of 50+ pirates across multiple islands.
-\end{itemize}
+\SectionR{EXPERIENCE}
+\Entry{2024--2025}{IT Support Intern}{Mid-size SaaS company \textbullet\
+Berlin}{%
+Handled L1/L2 tickets (account access, device setup, M365 issues),
+supported onboarding/offboarding, and improved the internal knowledge
+base. Built small PowerShell scripts to speed up routine checks.}
 
-\textbf{Freelance Pirate} \hfill 2019\\
-Tortuga – Bucaneering\\
-\begin{itemize}
-  \item Performed assorted buccaneering missions; “the usual, aye?”.
-\end{itemize}
+\Entry{2023--2024}{Freelance PC \& Network Support}{Part-time \textbullet\
+Berlin}{%
+Diagnosed hardware/software problems, performed Windows reinstallations,
+set up home networks, and explained fixes in plain language to users.}
 
-\textbf{Captain of the Black Pearl} \hfill 2016–2017\\
-Tortuga – Lead\\
-\begin{itemize}
-  \item Discovered a secret treasure; subsequently lost the ship.
-\end{itemize}
+\Entry{2022}{Campus IT Assistant}{University helpdesk \textbullet\ Berlin}{%
+Provided walk-up support, maintained lab PCs, and documented common fixes
+for printing, Wi-Fi, and account issues.}
 
-\vspace{0.3cm}
-% ---- Education -----------------------------------------------
-\section*{Education}
-\textbf{Captain (Certified)} \hfill 1710\\
-Tortuga University\\[0.2em]
+\SectionR{EDUCATION}
+\Entry{2021--2024}{B.Sc. Information Technology}{University of Applied
+Sciences}{%
+Focus: networks, operating systems, databases, and scripting. Final
+project: lightweight inventory tracking + documentation workflow.}
 
-\textbf{M.A. Bucaneering} \hfill 1715\\
-London\\[0.2em]
+\SectionR{CERTIFICATES}
+{\footnotesize
+\textbf{CompTIA A+} (in progress)\par
+\textbf{Microsoft 365 Fundamentals (MS-900)} (planned)\par
+\textbf{ITIL Foundation} (planned)\par
+}
 
-\textbf{B.A. Bucaneering} \hfill 1720\\
-London\\[0.2em]
-
-\vspace{0.3cm}
-% ---- Certificates \& Grants ---------------------------------
-\section*{Certificates \& Grants}
-\begin{itemize}
-  \item 1708 – Captain’s Certificates
-  \item 1710 – Travel grant
-  \item 1715–1716 – Grant from the Pirate’s Company
-\end{itemize}
-
-\vspace{0.3cm}
-% ---- Publications --------------------------------------------
-\section*{Publications}
-\begin{itemize}
-  \item 1729 – “How I almost got killed by Lady Swan”, Tortuga Printing Press.
-  \item 1720 – “Privateering for Beginners”, in \emph{The Pragmatic Pirate} (1/1720).
-\end{itemize}
-
-\vspace{0.3cm}
-% ---- Talks --------------------------------------------------
-\section*{Talks}
-Nov 1726 – “How I lost my ship (and how to get it back)”, Annual Pirate’s Conference, Tortuga.
+\SectionR{HOBBIES}
+{\footnotesize
+\faCoffee\hspace{6pt}Coffee \hspace{14pt}
+\faCode\hspace{6pt}Open-source \hspace{14pt}
+\faRunning\hspace{6pt}Running \hspace{14pt}
+\faCamera\hspace{6pt}Photography\par
+}
 
 \end{paracol}
+
 \end{document}

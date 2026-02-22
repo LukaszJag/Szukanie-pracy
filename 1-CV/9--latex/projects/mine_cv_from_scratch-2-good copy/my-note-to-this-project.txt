@@ -1,0 +1,6 @@
+mine_cv_from_scratch-2-good
+
+model: GTP-5.2 (Reasoning)
+
+
+

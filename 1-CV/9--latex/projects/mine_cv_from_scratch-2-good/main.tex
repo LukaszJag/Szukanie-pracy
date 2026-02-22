@@ -1,0 +1,350 @@
+%=========================================================
+% main.tex — CV template with:
+%  - Top header band (NO PHOTO / no image placeholder)
+%  - Left sidebar with background color + separator line
+%  - Main (center/right) content column
+% pdfLaTeX-friendly (TeX Live 2025/2026)
+%=========================================================
+\documentclass[11pt,a4paper]{article}
+
+% -------------------- Page --------------------
+\usepackage[a4paper,margin=1.4cm]{geometry}
+\usepackage{paracol}
+\usepackage{tabularx}
+\usepackage{enumitem}
+\usepackage{tikz}
+\usepackage{xcolor}
+\usepackage{eso-pic} % draw backgrounds on each page
+\usepackage[hidelinks]{hyperref}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{4pt}
+\setlist[itemize]{leftmargin=*,nosep,topsep=2pt}
+
+% -------------------- Colors --------------------
+\definecolor{HeaderBG}{HTML}{2A7FB8} % top band
+\definecolor{Accent}{HTML}{3BB54A}   % green accents
+\definecolor{Muted}{HTML}{666666}
+\definecolor{Line}{HTML}{DDDDDD}
+\definecolor{BarBG}{HTML}{E9E9E9}
+\definecolor{SidebarBG}{HTML}{F3F5F7}
+
+% -------------------- Column ratios --------------------
+% Keep these numbers in one place (used for both paracol and sidebar width)
+\def\LeftRatioNum{0.33}
+\def\RightRatioNum{0.67}
+
+\setlength{\columnsep}{12pt}
+\columnratio{\LeftRatioNum,\RightRatioNum}
+
+% -------------------- Header sizing --------------------
+\newlength{\HeaderBandHeight}
+\setlength{\HeaderBandHeight}{4.0cm} % adjust if you want a taller/shorter band
+
+\newlength{\HeaderBottomGap}
+\setlength{\HeaderBottomGap}{0.6cm}
+
+% -------------------- Derived lengths --------------------
+\newlength{\SidebarWidth}
+\newlength{\PageLeftMargin}
+
+% Draw sidebar background + separator line on every page (below header band)
+\AtBeginDocument{%
+  % Left edge of text area relative to page
+  \setlength{\PageLeftMargin}{\dimexpr 1in + \hoffset + \oddsidemargin\relax}%
+
+  % Sidebar width = left column width + half the column gap
+  \pgfmathsetlength{\SidebarWidth}{%
+    (\LeftRatioNum/(\LeftRatioNum+\RightRatioNum))*(\textwidth-\columnsep)
+    + 0.5*\columnsep
+  }%
+
+  \AddToShipoutPictureBG*{%
+    \begin{tikzpicture}[remember picture,overlay]
+      % Sidebar background from below header to bottom of page
+      \fill[SidebarBG]
+        ([xshift=\PageLeftMargin,yshift=-\HeaderBandHeight]current page.north west)
+        rectangle
+        ([xshift=\dimexpr\PageLeftMargin+\SidebarWidth\relax]current page.south west);
+
+      % Separator line at the right edge of the sidebar
+      \draw[Line, line width=0.7pt]
+        ([xshift=\dimexpr\PageLeftMargin+\SidebarWidth\relax,yshift=-\HeaderBandHeight]current page.north west)
+        --
+        ([xshift=\dimexpr\PageLeftMargin+\SidebarWidth\relax]current page.south west);
+    \end{tikzpicture}%
+  }%
+}
+
+% -------------------- Helpers --------------------
+\newcommand{\cvname}[1]{\fontsize{28}{32}\selectfont\textbf{#1}}
+
+\newcommand{\cvtitlebox}[1]{%
+  \tikz[baseline] \node[
+    fill=black,
+    text=white,
+    inner xsep=6pt,
+    inner ysep=3pt,
+    font=\small\bfseries
+  ] {#1};%
+}
+
+\newcommand{\sectionlabel}[1]{%
+  \vspace{6pt}%
+  \tikz \node[
+    fill=Accent,
+    text=white,
+    font=\bfseries,
+    inner xsep=8pt,
+    inner ysep=4pt,
+    anchor=west
+  ] {#1};%
+  \vspace{4pt}\par
+}
+
+\newcommand{\subtle}[1]{{\color{Muted}#1}}
+
+\newcommand{\divider}{%
+  \par\vspace{6pt}%
+  \noindent\color{Line}\rule{\linewidth}{0.6pt}%
+  \color{black}\par\vspace{6pt}%
+}
+
+% Rating dots: #1 filled (0..5), #2 total (usually 5)
+\newcommand{\ratingdots}[2]{%
+  \begin{tikzpicture}[baseline=-0.6ex]
+    \pgfmathtruncatemacro{\filled}{#1}
+    \pgfmathtruncatemacro{\total}{#2}
+    \foreach \i in {1,...,\total} {
+      \ifnum\i>\filled
+        \fill[BarBG] (0.28*\i,0) circle (1.2pt);
+      \else
+        \fill[Accent] (0.28*\i,0) circle (1.2pt);
+      \fi
+    }
+  \end{tikzpicture}%
+}
+
+% Skill bar: #1 label, #2 percent (0..100)
+\newcommand{\skillbar}[2]{%
+  \textbf{#1}\par
+  \begin{tikzpicture}
+    \pgfmathsetmacro{\w}{0.05 * #2} % 100 -> 5.0 units
+    \fill[BarBG] (0,0) rectangle (5,0.18);
+    \fill[Accent] (0,0) rectangle (\w,0.18);
+  \end{tikzpicture}\par
+}
+
+% Tag/pill
+\newcommand{\pill}[1]{%
+  \tikz[baseline] \node[
+    draw=Line,
+    fill=white,
+    rounded corners=10pt,
+    inner xsep=8pt,
+    inner ysep=3pt,
+    font=\small
+  ] {#1};%
+}
+
+% Timeline entry:
+% #1 years, #2 title, #3 role/area, #4 location, #5 description
+\newcommand{\cvevent}[5]{%
+  \begin{tabularx}{\linewidth}{@{}p{2.6cm}X@{}}
+    {\color{Muted}\small #1} &
+    {\textbf{#2}\par
+     {\small\textbf{\color{Accent}#3} \textbullet\ \color{Muted}#4}\par
+     {\small #5}} \\
+  \end{tabularx}\par\vspace{6pt}
+}
+
+% -------------------- Header band (NO PHOTO) --------------------
+\newcommand{\makeheader}{%
+  \begin{tikzpicture}[remember picture,overlay]
+    \fill[HeaderBG]
+      (current page.north west) rectangle
+      ([yshift=-\HeaderBandHeight]current page.north east);
+
+    % Put header text aligned to the text margin (no reserved photo area)
+    \node[
+      anchor=north west,
+      align=left,
+      xshift=\PageLeftMargin,
+      yshift=-1.0cm
+    ] {%
+      \color{white}\cvname{JACK SPARROW}\par\vspace{6pt}%
+      \cvtitlebox{Captain}\hspace{6pt}\cvtitlebox{Pirate}%
+    };
+  \end{tikzpicture}
+
+  % Push content below the header band
+  \vspace*{\dimexpr\HeaderBandHeight-\HeaderBottomGap\relax}
+}
+
+% Padding inside the left column so text doesn’t hug the sidebar edge
+\newenvironment{LeftColumn}{%
+  \begingroup
+  \small
+  \setlength{\leftskip}{3mm}%
+  \setlength{\rightskip}{2mm}%
+}{%
+  \par\endgroup
+}
+
+\newenvironment{MainColumn}{%
+  \begingroup
+  \normalsize
+}{%
+  \par\endgroup
+}
+
+%=========================================================
+% Document
+%=========================================================
+\begin{document}
+\makeheader
+
+\begin{paracol}{2}
+
+%=========================================================
+% LEFT COLUMN (SIDEBAR)
+%=========================================================
+\begin{LeftColumn}
+
+\sectionlabel{FACTS}
+\textbf{personal}\par
+\subtle{%
+  Jack Sparrow\par
+  nationality: English\par
+  1690\par
+  on a ship\par
+}
+\vspace{4pt}
+\textbf{Areas of specialization}\par
+Privateering \textbullet\ Bucaneering \textbullet\ Parler
+
+\sectionlabel{SKILLS}
+\textbf{Languages}\par
+English \hfill \subtle{C2 (mother tongue)}\par
+French \hfill \subtle{C2}~\ratingdots{4}{5}\par
+
+\vspace{6pt}
+\textbf{Interests}\par
+\pill{a pirate's life} \pill{the sea}\par
+\pill{pillaging} \pill{plundering}\par
+\pill{ships} \pill{stealing}\par
+\pill{hijacking} \pill{The Black Pearl}\par
+
+\vspace{6pt}
+\textbf{IT \& programming}\par
+\skillbar{html, css}{85}
+\skillbar{\LaTeX}{80}
+\skillbar{xslt}{60}
+\skillbar{python}{75}
+\skillbar{R}{55}
+\skillbar{javascript}{65}
+
+\end{LeftColumn}
+
+% Switch to main column
+\switchcolumn
+
+%=========================================================
+% MAIN COLUMN
+%=========================================================
+\begin{MainColumn}
+
+\sectionlabel{SHORT RESUM\`E}
+\cvevent
+  {2018--2021}
+  {Captain of the Black Pearl}
+  {LEAD}
+  {East Indies}
+  {Finally got the goddamn ship back.}
+
+\cvevent
+  {2019}
+  {Freelance Pirate}
+  {BUCANEERING}
+  {Tortuga}
+  {This and that. The usual, aye?}
+
+\cvevent
+  {2016--2017}
+  {Captain of the Black Pearl}
+  {LEAD}
+  {Tortuga}
+  {Found a secret treasure, lost the ship.}
+
+\sectionlabel{DEGREES}
+\cvevent
+  {1710}
+  {Captain}
+  {CERTIFIED}
+  {Tortuga Uni}
+  {}
+
+\cvevent
+  {1715}
+  {Bucaneering}
+  {M.A.}
+  {London}
+  {}
+
+\cvevent
+  {1720}
+  {Bucaneering}
+  {B.A.}
+  {London}
+  {}
+
+\sectionlabel{HOBBIES}
+\pill{Rhum}\hspace{6pt}\pill{The Code}\hspace{6pt}\pill{Parler}\hspace{6pt}\pill{Beer}\par
+
+\sectionlabel{CERTIFICATES \& GRANTS}
+\begin{itemize}
+  \item \textbf{1708} Captain's Certificates
+  \item \textbf{1710} Travel grant
+  \item \textbf{1715--1716} Grant from the Pirate's Company
+\end{itemize}
+
+\sectionlabel{STRENGTHS}
+\pill{honest}\hspace{6pt}\pill{thieving}\hspace{6pt}\pill{handsome}\par
+
+\sectionlabel{REFERENCES}
+\pill{Will Turner}\hspace{6pt}\pill{Barbossa}\hspace{6pt}\pill{possibly Mr. Swan}\par
+
+\sectionlabel{PUBLICATIONS}
+\begin{itemize}
+  \item \textbf{1729} How I almost got killed by Lady Swan,
+    Tortuga Printing Press.
+  \item \textbf{1720} ``Privateering for Beginners'', in:
+    \textit{The Pragmatic Pirate} (1/1720).
+\end{itemize}
+
+\sectionlabel{TALKS}
+\begin{itemize}
+  \item \textbf{Nov. 1726} ``How I lost my ship (\& how to get it back)'',
+    at: Annual Pirate's Conference in Tortuga, Nov. 1726.
+\end{itemize}
+
+% Footer (wrapped to avoid Overfull \hbox)
+\divider
+\small
+\begin{tabularx}{\linewidth}{@{}X@{}}
+  \subtle{%
+    Jack Sparrow \textbullet\ The Black Pearl \textbullet\ Tortuga
+    \textbullet\ 0099/333 5647380 \textbullet\
+    \href{mailto:jack@sparrow.com}{jack@sparrow.com}%
+  }%
+\end{tabularx}
+
+\end{MainColumn}
+
+\end{paracol}
+\end{document}
