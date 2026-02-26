@@ -1,0 +1,325 @@
+%=========================================================
+% One-page A4 CV (AUTO-FITS on the first page)
+% Template data replaced for: Łukasz Jagnow
+% - Guaranteed single page by drawing as TikZ overlay
+%=========================================================
+\documentclass[10pt, a4paper]{article}
+
+\usepackage[a4paper, margin=0cm, noheadfoot]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{adjustbox}
+\usepackage{tabularx}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{3pt}
+\setlist[itemize]{leftmargin=*, nosep, topsep=2pt}
+
+% -------------------- EDIT YOUR DATA HERE --------------------
+
+% [DATA SECTION: Personal Identification] 
+% Contains your name and your professional titles.
+\newcommand{\CVName}{Łukasz Jagnow}
+\newcommand{\CVTitleA}{IT Support} % <-- change
+\newcommand{\CVTitleB}{Student of last year}     % <-- change
+
+% [DATA SECTION: Contact Information]
+% Contains your location, phone, email, and website.
+\newcommand{\CVLocation}{Wrocław, Poland} % <-- change
+\newcommand{\CVPhone}{+48 507 707 650}  % <-- change
+\newcommand{\CVEmail}{lukasz.jagnow@example.com} % <-- change
+%\newcommand{\CVWebsite}{https://example.com}      % <-- optional
+
+% [DATA SECTION: Sidebar Profile & Focus]
+% Sidebar "facts" block (edit freely). Contains your work preferences and core focus areas.
+\newcommand{\CVFacts}{%
+  \textbf{Profile}\par
+  \subtleW{%
+    \CVLocation\par
+    Open to: \par % <-- change
+    Remote / Hybrid/ On Site\par              % <-- change
+  }%
+  \vspace{2pt}%
+  \textbf{Focus}\par
+  \subtleW{%
+    Systems \textbullet\ Hardware \textbullet\ Troubleshooting\par % <-- change
+  }%
+}
+
+% [DATA SECTION: Language Skills]
+% Contains your spoken/written languages and their proficiency ratings.
+\newcommand{\CVLanguages}{%
+  \textbf{Languages}\par
+  Polish \hfill \subtleW{Native}\par % <-- change
+  English \hfill \subtleW{B2/C1}~\par % <-- change
+}
+
+% [DATA SECTION: Hobbies & Interests]
+% Contains short tags/pills for your professional or personal interests.
+\newcommand{\CVInterests}{%
+  \textbf{Skills}\par
+  \pill{Linux}\ \pill{Networking}\par
+  \pill{Automation}\ \pill{Security}\par
+  \pill{Open-source}\ \pill{Coffee}\par
+}
+
+% [DATA SECTION: Technical Skills]
+% Contains your IT & programming skills and their proficiency bars (out of 100).
+\newcommand{\CVITSkills}{%
+  \textbf{IT \& programming}\par
+  \skillbar{Linux / Windows}{80}
+  \skillbar{Networking}{70}
+  \skillbar{Python}{75}
+  \skillbar{JavaScript}{60}
+  \skillbar{\LaTeX}{65}
+}
+
+% --- Main content sections (edit) ---
+
+% [DATA SECTION: Professional Experience / Summary]
+% Contains your work history entries.
+\newcommand{\CVSummary}{%
+  \cvevent{20XX--20YY}{Job Title}{TEAM / ROLE}{Company / Location}{%
+    One strong achievement with numbers if possible.}%
+  \cvevent{20XX}{Job Title}{ROLE}{Company / Location}{%
+    Another achievement line.}%
+}
+
+% [DATA SECTION: Education History]
+% Contains your degrees, universities, and graduation years.
+\newcommand{\CVEducation}{%
+  \cvevent{20XX}{Degree}{B.Sc. / M.Sc.}{University}{Optional details}%
+}
+
+% [DATA SECTION: Certifications]
+% Contains a list of your professional certificates.
+\newcommand{\CVCerts}{%
+  \begin{itemize}
+    \item \textbf{20XX} Certification name
+    \item \textbf{20XX} Another certification
+  \end{itemize}%
+}
+
+% [DATA SECTION: Publications]
+% Contains a list of your blog posts, articles, or talks.
+\newcommand{\CVPublications}{%
+  \begin{itemize}
+    \item \textbf{20XX} Publication / blog post / talk title, venue.
+  \end{itemize}%
+}
+
+% [DATA SECTION: Footer Data Layout]
+% Aggregates your contact data variables into the bottom footer line.
+\newcommand{\CVFooterLine}{%
+  \CVName\ \textbullet\ \CVLocation\ \textbullet\ \CVPhone\ \textbullet\
+  \href{mailto:\CVEmail}{\CVEmail}%
+}
+
+% -------------------- Colors --------------------
+% [DATA SECTION: Theme Colors]
+% Defines the color palette used throughout the document.
+\definecolor{HeaderBG}{HTML}{2A7FB8}
+\definecolor{Accent}{HTML}{3BB54A}
+\definecolor{Muted}{HTML}{777777}
+\definecolor{Line}{HTML}{DDDDDD}
+\definecolor{BarBG}{HTML}{E9E9E9}
+\definecolor{SidebarBG}{HTML}{000000}
+
+% -------------------- Layout knobs --------------------
+% [DATA SECTION: Layout Dimensions]
+% Contains spacing, sizing, and positional configurations.
+\newlength{\HeaderH}
+\setlength{\HeaderH}{3.8cm}
+
+\newlength{\RightPad}
+\setlength{\RightPad}{1.4cm}
+
+\newlength{\BodyTopPad}
+\setlength{\BodyTopPad}{0.6cm}
+
+\newlength{\SepW}
+\setlength{\SepW}{0.7pt}
+
+\newlength{\ColGap}
+\setlength{\ColGap}{10pt}
+
+% Sidebar width as a fraction of page width (33%)
+\newlength{\SidebarW}
+\newlength{\MainX}
+\newlength{\MainW}
+\AtBeginDocument{%
+  \setlength{\SidebarW}{0.33\paperwidth}%
+  \setlength{\MainX}{\dimexpr\SidebarW+\SepW+\ColGap\relax}%
+  \setlength{\MainW}{\dimexpr\paperwidth-\MainX-\RightPad\relax}%
+}
+
+% -------------------- Components --------------------
+\newcommand{\cvname}[1]{\fontsize{28}{32}\selectfont\textbf{#1}}
+
+\newcommand{\cvtitlebox}[1]{%
+  \begingroup
+  \setlength{\fboxsep}{4pt}%
+  \colorbox{black}{\textcolor{white}{\small\bfseries #1}}%
+  \endgroup
+}
+
+\newcommand{\cvsec}[1]{%
+  \par\vspace{4pt}%
+  \begingroup
+  \setlength{\fboxsep}{4pt}%
+  \colorbox{Accent}{\textcolor{white}{\bfseries #1}}%
+  \endgroup
+  \par\vspace{3pt}%
+}
+
+\newcommand{\subtle}[1]{{\color{Muted}#1}}
+\newcommand{\subtleW}[1]{{\color{white!75}#1}}
+
+\newcommand{\rating}[2]{%
+  \begingroup
+  \count0=1
+  \loop
+    \ifnum\count0>#2
+    \else
+      \ifnum\count0>#1
+        {\color{BarBG}\textbullet}%
+      \else
+        {\color{Accent}\textbullet}%
+      \fi
+      \hspace{2pt}%
+      \advance\count0 by 1
+  \repeat
+  \endgroup
+}
+
+\newcommand{\skillbar}[2]{%
+  \textbf{#1}\par
+  \noindent{\color{BarBG}\rule{\linewidth}{2pt}}\par
+  \vspace{-2pt}%
+  \noindent{\color{Accent}\rule{\dimexpr\linewidth*#2/100\relax}{2pt}}\par
+  \vspace{2pt}%
+}
+
+\newcommand{\pill}[1]{%
+  \begingroup
+  \setlength{\fboxsep}{3pt}%
+  \colorbox{white}{\textcolor{black}{\small #1}}%
+  \endgroup
+}
+
+\newcommand{\cvevent}[5]{%
+  \begin{tabularx}{\linewidth}{@{}p{2.4cm}X@{}}
+    {\color{Muted}\small #1} &
+    {\textbf{#2}\par
+     {\small\textbf{\color{Accent}#3} \textbullet\ \color{Muted}#4}\par
+     {\small #5}} \\
+  \end{tabularx}\par\vspace{4pt}%
+}
+
+%=========================================================
+% Document (guaranteed 1 page)
+%=========================================================
+\begin{document}
+\thispagestyle{empty}
+
+% Create exactly ONE page, then draw everything as an overlay.
+\null
+
+\begin{tikzpicture}[remember picture, overlay]
+\node[anchor=north west, inner sep=0pt, outer sep=0pt]
+  at (current page.north west) {%
+  \begin{adjustbox}{max totalsize={\paperwidth}{\paperheight}}%
+  \begin{tikzpicture}[inner sep=0pt, outer sep=0pt]
+
+    % --- Page canvas ---
+    \node[
+      minimum width=\paperwidth,
+      minimum height=\paperheight,
+      anchor=north west
+    ] (page) at (0,0) {};
+
+    % --- Backgrounds ---
+    \fill[HeaderBG]
+      (page.north west) rectangle ([yshift=-\HeaderH]page.north east);
+
+    \fill[SidebarBG]
+      ([yshift=-\HeaderH]page.north west)
+      rectangle
+      ([xshift=\SidebarW]page.south west);
+
+    \draw[Line, line width=\SepW]
+      ([xshift=\SidebarW,yshift=-\HeaderH]page.north west) --
+      ([xshift=\SidebarW]page.south west);
+
+    % --- Header text ---
+    \node[anchor=north east, align=right, text=white, inner sep=0pt]
+      at ([xshift=-\RightPad,yshift=-0.9cm]page.north east) {%
+        \cvname{\CVName}\par\vspace{6pt}%
+        \cvtitlebox{\CVTitleA}\hspace{6pt}\cvtitlebox{\CVTitleB}%
+      };
+
+    % --- Sidebar content ---
+    \node[
+      anchor=north west,
+      align=left,
+      text=white,
+      inner sep=0pt,
+      text width=\dimexpr\SidebarW-14mm\relax
+    ] at ([xshift=10mm,yshift=-\dimexpr\HeaderH+\BodyTopPad\relax]page.north west) {%
+      \small
+
+      \cvsec{FACTS}
+      \CVFacts
+
+      \cvsec{SKILLS}
+      \CVLanguages
+
+      \vspace{4pt}
+      \CVInterests
+
+      \vspace{4pt}
+      \CVITSkills
+    };
+
+    % --- Main content ---
+    \node[
+      anchor=north west,
+      align=left,
+      text=black,
+      inner sep=0pt,
+      text width=\MainW
+    ] at ([xshift=\MainX,yshift=-\dimexpr\HeaderH+\BodyTopPad\relax]page.north west) {%
+      \normalsize
+
+      \cvsec{SHORT R\'ESUM\'E}
+      \CVSummary
+
+      \cvsec{EDUCATION}
+      \CVEducation
+
+      \cvsec{CERTIFICATES}
+      \CVCerts
+
+      \cvsec{PUBLICATIONS}
+      \CVPublications
+
+      \vspace{6pt}
+      {\color{Line}\rule{\linewidth}{0.6pt}}\par
+      \small
+      \subtle{\CVFooterLine}%
+    };
+
+  \end{tikzpicture}%
+  \end{adjustbox}%
+};
+\end{tikzpicture}
+
+\end{document}

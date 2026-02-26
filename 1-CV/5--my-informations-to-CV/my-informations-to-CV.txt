@@ -18,6 +18,20 @@ my-informations-to-CV:
 
 4 - Skills
 
+    Short form:
+
+        MySQL
+        Linux
+        Windows
+        Troubleshooting
+        Networking
+        Windows Powershell
+        Java
+        Git
+        Microsoft Office
+        PC Hardware
+        Coffee
+
     Software:
 
         MySQL
@@ -27,44 +41,19 @@ my-informations-to-CV:
     Softskill:
         Troubleshooting
 
-
-
-
-
-
- 
-    Networking
-
-
-    Windows PowerShell
-     
-
-
-    PC Hardware 
-    Mobie Hardware 
-
-
-    Java 
-    Cloud 
-
-
-    Git 
-    MS Office
-
-
 5 - Hobbies
 
-Choose some from this:
-    -> Science fiction 
-    -> Strategy Games
-    -> Powerlifting
-    -> MMA 
-    -> Swimming 
-    -> Motosport
-    -> Music
-    -> Drone
-    -> GameDev
-    -> Cars
+    Choose some from this:
+        -> Science fiction 
+        -> Strategy Games
+        -> Powerlifting
+        -> MMA 
+        -> Swimming 
+        -> Motosport
+        -> Music
+        -> Drone
+        -> GameDev
+        -> Cars
 
 6 - About me
 
