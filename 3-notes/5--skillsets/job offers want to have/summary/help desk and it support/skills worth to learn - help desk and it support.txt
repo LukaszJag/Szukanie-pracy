@@ -1,0 +1,49 @@
+
+Skills I don't have but it is worth to learn:
+
+    -> Znajomość Active Directory w zakresie zarządzania kontami i uprawnieniami użytkowników
+    -> Znajomość systemów MS Windows (instalacja, konfiguracja, administracja podstawowa)
+    -> Podstawowa wiedza z zakresu sieci komputerowych (LAN/WAN)
+    -> Znajomość zagadnień związanych z VPN
+    -> Doświadczenie w pracy z użytkownikiem końcowym - lokalnie i zdalnie
+
+
+Skills I don't have but it is worth to learn:
+
+    -> Znajomość Active Directory w zakresie zarządzania kontami i uprawnieniami użytkowników
+    -> Znajomość systemów MS Windows (instalacja, konfiguracja, administracja podstawowa)
+    -> Podstawowa wiedza z zakresu sieci komputerowych (LAN/WAN)
+    -> Znajomość zagadnień związanych z VPN
+    -> Doświadczenie w pracy z użytkownikiem końcowym - lokalnie i zdalnie  
+
+    
+Z ofert pracy:
+
+Agenda
+-> nie mam 
+L> chce się nauczyć
++> mam
+?> nie wiem czy chce się nauczyć
+!> musze się nauczyć
+^> nie chce się nauczyć
+
+
+
+Helpdesk:
+
+    Junior IT Support Specialist:
+    https://www.linkedin.com/jobs/view/4371429811:
+
+
+    Nasze oczekiwania: 
+
+        ->  Bardzo dobra znajomość Windows 10/11 (konfiguracja, diagnostyka, sieć) 
+        ->  Umiejętność diagnozowania i naprawy usterek laptopów, stacji roboczych, monitorów, telefonów służbowych, drukarek i peryferiów. 
+        -!> Znajomość pakietu MS Office 365 (Outlook, Teams, Excel, Word) oraz przeglądarek internetowych. 
+        ->  Zrozumienie protokołu TCP/IP, konfiguracja IP, VPN, Wi-Fi. 
+        ->  Podstawowa wiedza z zakresu Active Directory (tworzenie kont, resetowanie haseł) oraz narzędzi typu SCCM/Intune do instalacji oprogramowania. 
+        +>  Umiejętność i chęć nauki nowych technologii i narzędzi 
+        +>  Język angielski na poziomie min. B2 (w międzynarodowych korporacjach to standard). 
+        +>  Komunikatywność i nastawienie na pomoc (umiejętność tłumaczenia problemów technicznych nietechnicznym użytkownikom) 
+        +>  Zdolność do szybkiego diagnozowania problemów 
+        +>  Umiejętność zarządzania priorytetami 
