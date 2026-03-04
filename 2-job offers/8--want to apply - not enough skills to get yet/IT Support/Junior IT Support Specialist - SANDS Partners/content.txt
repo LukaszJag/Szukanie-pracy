@@ -1,0 +1,50 @@
+Link:
+https://www.linkedin.com/jobs/view/4380377105
+
+About the job
+
+Opis firmy
+
+Od 2019 roku wspieramy firmy w usprawnianiu procesów sprzedażowych i motywacyjnych. Tworzymy zespół konsultantów biznesowych, programistów i deweloperów, dla których liczą się otwartość, współpraca i kreatywne podejście do wyzwań.
+
+Opis oferty pracy
+
+Zakres obowiązków: 
+
+    Udzielanie wsparcia technicznego pracownikom (onsite i zdalnie) 
+    Diagnozowanie i rozwiązywanie problemów związanych z systemem Windows 10/11, aplikacjami i konfiguracją urządzeń. 
+    Konfiguracja, instalacja i podstawowa naprawa laptopów, komputerów stacjonarnych, monitorów, drukarek, telefonów służbowych oraz urządzeń peryferyjnych. 
+    Instalacja oraz aktualizacja oprogramowania 
+    Zakładanie kont, resetowanie haseł oraz bieżąca administracja użytkownikami 
+    Wsparcie użytkowników w korzystaniu z aplikacji Microsoft 365 
+    Rozwiązywanie problemów związanych z siecią 
+    Konfiguracja nowych urządzeń i przygotowywanie stanowisk pracy dla nowych pracowników (onboarding). 
+    Utrzymywanie dokumentacji technicznej oraz instrukcji dla pracowników. 
+    Dbanie o poprawną komunikację z pracownikami - informowanie o postępach prac, statusie zgłoszeń i rozwiązaniach. 
+    Monitorowanie sprzętu i zgłaszanie konieczności napraw, wymiany lub utylizacji. 
+
+Kwalifikacje
+
+Nasze oczekiwania: 
+
+    Bardzo dobra znajomość Windows 10/11 (konfiguracja, diagnostyka, sieć) 
+    Umiejętność diagnozowania i naprawy usterek laptopów, stacji roboczych, monitorów, telefonów służbowych, drukarek i peryferiów. 
+    Znajomość pakietu MS Office 365 (Outlook, Teams, Excel, Word) oraz przeglądarek internetowych. 
+    Zrozumienie protokołu TCP/IP, konfiguracja IP, VPN, Wi-Fi. 
+    Podstawowa wiedza z zakresu Active Directory (tworzenie kont, resetowanie haseł) oraz narzędzi typu SCCM/Intune do instalacji oprogramowania. 
+    Umiejętność i chęć nauki nowych technologii i narzędzi 
+    Język angielski na poziomie min. B2 (w międzynarodowych korporacjach to standard). 
+    Komunikatywność i nastawienie na pomoc (umiejętność tłumaczenia problemów technicznych nietechnicznym użytkownikom) 
+    Zdolność do szybkiego diagnozowania problemów 
+    Umiejętność zarządzania priorytetami 
+
+Dodatkowe informacje
+
+Oferujemy:
+
+    Zatrudnienie na podstawie umowy UZ (studenci) lub UoP/B2B
+    Wynagrodzenie godzinowe w przedziale 30-50 zł/godzinę (niepełny wymiar)
+    Przyjazną atmosferę pracy i wsparcie zespołu
+    Możliwość rozwoju zawodowego i podnoszenia kwalifikacji
+    Wyjazdy integracyjne i wydarzenia firmowe
+

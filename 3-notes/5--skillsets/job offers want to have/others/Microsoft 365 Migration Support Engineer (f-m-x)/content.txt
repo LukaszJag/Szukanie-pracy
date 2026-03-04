@@ -1,0 +1,59 @@
+Link:
+
+https://www.linkedin.com/jobs/view/4378189140/
+
+About the job
+
+We are looking for an experienced Microsoft 365 Migration Support Engineer to join Sii and support a large-scale transition from Google Workspace to Microsoft 365 for our international client. You will contribute to a major cloud transformation initiative, ensuring a smooth and reliable user experience across email, collaboration tools, storage systems, and authentication services.
+
+You will work in a friendly, collaborative environment with access to Sii’s learning platforms, Microsoft partnership resources, certification paths, and long‑term development opportunities.
+
+If you enjoy solving technical challenges, supporting enterprise users, and working in a dynamic migration project — apply and join us!
+
+ Your tasks
+
+    Deliver Level 2 support for users migrating from Google Workspace to Microsoft 365, ensuring smooth transitions across email, storage, and collaboration tools
+    Troubleshoot issues related to email migration, file transfers, document conversion, authentication, permissions, and Teams configuration
+    Assist users with locating migrated content, resolving access issues, and adapting to new workflows and MFA processes
+    Monitor and handle hypercare activities, including daily stand‑ups, channel monitoring, office hours, and reporting on issue trends
+    Create and maintain knowledge base materials, runbooks, FAQs, and troubleshooting documentation
+
+Requirements
+
+    At least 4 years of experience in technical support, cloud migrations, or Microsoft 365 administration
+    Strong knowledge of Microsoft 365 services, including Exchange Online, SharePoint, OneDrive, Teams, and Azure AD fundamentals
+    Hands-on experience with Google Workspace environments and cross-platform migrations
+    Ability to diagnose complex issues across authentication, data synchronization, file systems, and user access
+    Very good English skills (min. B2), enabling effective communication in an international environment
+    Fluent Polish required
+    Residing in Poland required
+
+Job no. 260303-E5V9T
+
+Sii ensures that all hiring decisions are made solely on the basis of qualifications and competence. We are committed to equal and fair treatment of all, regardless of legally protected characteristics. At Sii, we promote a diverse and inclusive work environment, in full compliance with applicable anti-discrimination laws.
+
+Benefits For You
+
+Great Place to Work
+
+Solid financial situation
+
+Contracts with the biggest brands
+
+Centre of internal trainings
+
+Many experts you can learn from
+
+Open and accessible management team
+
+Profit sharing
+
+Passion Sponsorship program
+
+Regular integration events and trips
+
+Comfortable and well-equipped offices
+
+MySii app
+
+Medical care

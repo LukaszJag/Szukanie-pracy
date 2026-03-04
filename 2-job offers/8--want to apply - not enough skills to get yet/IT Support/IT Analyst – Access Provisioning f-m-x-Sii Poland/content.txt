@@ -1,0 +1,58 @@
+Link:
+https://www.linkedin.com/jobs/view/4378181872/
+
+About the job
+
+We are looking for an IT Analyst experienced in access provisioning to support our client, an international organization recognized for its large‑scale cloud‑based communication solutions. You will work on an established environment, managing user access across enterprise systems and ensuring compliance with security and regulatory standards.
+
+In this role, you will collaborate with global teams, handle access requests, and work with modern identity management tools. The position is based in a hybrid model from Wrocław. At Sii, you’ll gain access to certification programs, mentoring, and development paths in cybersecurity and IAM.
+
+Apply now and join a people‑first, stable, long‑term partnership environment!
+
+ Your tasks
+
+    Manage and fulfill access requests across enterprise applications using IAM platforms and ticketing systems
+    Provision user accounts through Okta groups, automated workflows, and application admin consoles
+    Handle full user lifecycle events, including onboarding, role changes, and offboarding
+    Ensure compliance with security standards, including least‑privilege principles and regulatory checks
+    Maintain documentation, communicate with requestors, and collaborate with global support teams
+
+Requirements
+
+    At least 3 years of experience in IT support, IAM operations, or access management roles
+    Practical experience with Okta or similar identity platforms and enterprise ticketing tools
+    Ability to navigate admin consoles and quickly learn new systems and provisioning procedures
+    Strong attention to detail, organizational skills, and a service‑oriented approach
+    English at B2 level or higher (written and spoken)
+    Fluent Polish required
+    Residing in Poland required
+
+Job no. 260303-CSTEZ
+
+Sii ensures that all hiring decisions are made solely on the basis of qualifications and competence. We are committed to equal and fair treatment of all, regardless of legally protected characteristics. At Sii, we promote a diverse and inclusive work environment, in full compliance with applicable anti-discrimination laws.
+
+Benefits For You
+
+Great Place to Work
+
+Solid financial situation
+
+Contracts with the biggest brands
+
+Centre of internal trainings
+
+Many experts you can learn from
+
+Open and accessible management team
+
+Profit sharing
+
+Passion Sponsorship program
+
+Regular integration events and trips
+
+Comfortable and well-equipped offices
+
+MySii app
+
+Medical care
